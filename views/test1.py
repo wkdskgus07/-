@@ -18,7 +18,7 @@ st.divider()  # 가로 긴 줄 구분선
 st.markdown(
     '''
     This is main text.
-    This is how to change the color of text :red[Red,] :blue[Blue,] :green[Green.]
+    This is how to change the color of text :purple[Purple,] :blue[Blue,] :green[Green.]
     This is **Bold** and *Italic* text
     '''
 )
@@ -31,7 +31,7 @@ st.divider()  # 가로 긴 줄 구분선
 st.text(
     '''
     This is main text.
-    This is how to change the color of text :red[Purple,] :blue[Blue,] :green[Green.]
+    This is how to change the color of text :red[Red,] :blue[Blue,] :green[Green.]
     This is **Bold** and *Italic* text
     '''
 )
