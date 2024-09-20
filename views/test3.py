@@ -1,6 +1,10 @@
 import streamlit as st
+import random
 
-def playgame()
+#게임 결과 내는 함수.guess는 사람 추측값 0(앞면), 1(뒷면)
+def playGame(guessNum):
+comNum = random.randint(0,1)
+if comNum
 
 st.title("동전 던지기 게임")
 st.divider()
@@ -15,6 +19,6 @@ st.button('앞면')
 st.button('뒷면')
 
 if st.button('앞면'):
-  playgame(0)
+  playGame(0)
 if st.button('뒷면'):
- playgame(1)
+ playGame(1)
