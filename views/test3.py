@@ -6,7 +6,7 @@ def playGame(guessNum):
  comNum = random.randint(0,1)
  if comNum == guessNum:
   st.write('적중!!')
-else:
+ else:
   st.write('아쉽네요. 틀렸습니다.')
 
 st.title("동전 던지기 게임")
