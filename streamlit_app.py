@@ -31,7 +31,7 @@ test2_page = st.Page(
 )
 test3_page = st.Page(
     page="views/test3.py",
-    title="스트림릿 테스트 3",
+    title="동전 던지기 게임",
     icon=":material/sentiment_satisfied:",
 )
 test4_page = st.Page(
