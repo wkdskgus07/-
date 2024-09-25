@@ -5,9 +5,9 @@ import random
 def playGame(guessNum):
  comNum = random.randint(0,1)
  if comNum == guessNum:
-  st.write('적중!!')
+  st.write('정답ㅊㅋ')
  else:
-  st.write('아쉽네요. 틀렸습니다.')
+  st.write('풉ㅋ 이걸 틀리네')
 
 st.title("동전 던지기 게임")
 st.divider()
