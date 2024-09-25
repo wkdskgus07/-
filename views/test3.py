@@ -37,7 +37,7 @@ if choice != -1:    # 사용자가 동전 선택을 한 경우
     with col3:
         if computer == 0:
             st.image('assets/coin_head.png')
-       else:
+        else:
             st.image('assets/coin_tail.png')
             
     with col4:
