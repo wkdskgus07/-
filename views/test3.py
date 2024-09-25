@@ -48,7 +48,7 @@ if choice != -1:    # 사용자가 동전 선택을 한 경우
     
     if computer == choice:
         st.subheader("정답이다.")
-        st.balloons()
+        st.snow()
     else:
         st.subheader("풉ㅋ 이걸 틀리네. 이제 넌 살아서 나갈 수 없다.")
     
