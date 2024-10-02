@@ -1,68 +1,60 @@
 import streamlit as st
 
-# Declare characters
-define e = Character("Eunha", color="#c8ffc8")
-define j = Character("Jisoo", color="#ffc8c8")
+# 캐릭터와 배경 설정
+characters = {
+    "e": "은하",
+    "j": "지수"
+}
 
-# The game starts here.
-label start:
+# 게임의 흐름을 관리하는 함수
+def main():
+    st.title("미연시 게임")
 
-    scene bg room
-    show eunha happy
+    if "step" not in st.session_state:
+        st.session_state.step = 0
 
-    e "안녕! 나의 이름은 은하야. 오늘은 너와 함께 시간을 보내고 싶어."
+    if st.session_state.step == 0:
+        st.write("안녕! 나의 이름은 은하야. 오늘은 너와 함께 시간을 보내고 싶어.")
+        st.write("안녕! 나는 지수야. 너와 만나서 반가워!")
 
-    j "안녕! 나는 지수야. 너와 만나서 반가워!"
+        if st.button("은하와 함께 시간을 보낸다."):
+            st.session_state.step = 1
+        if st.button("지수와 함께 시간을 보낸다."):
+            st.session_state.step = 2
 
-    menu:
-        "은하와 함께 시간을 보낸다.":
-            jump hangout_eunha
+    elif st.session_state.step == 1:
+        st.write("어디로 가고 싶어?")
+        if st.button("카페에 가자."):
+            st.session_state.step = 3
+        if st.button("영화 보러 가자."):
+            st.session_state.step = 4
 
-        "지수와 함께 시간을 보낸다.":
-            jump hangout_jisoo
+    elif st.session_state.step == 2:
+        st.write("어디에 가고 싶어?")
+        if st.button("공원에 가자."):
+            st.session_state.step = 5
+        if st.button("쇼핑하러 가자."):
+            st.session_state.step = 6
 
-label hangout_eunha:
-    e "어디로 가고 싶어?"
-    
-    menu:
-        "카페에 가자.":
-            e "좋아! 카페에서 맛있는 커피를 마시자."
-            jump cafe_scene
+    elif st.session_state.step == 3:
+        st.write("커피가 정말 맛있다!")
+        st.button("다시 시작하기", on_click=reset_game)
 
-        "영화 보러 가자.":
-            e "영화라니! 어떤 영화를 볼까?"
-            jump movie_scene
+    elif st.session_state.step == 4:
+        st.write("이 영화 정말 재밌다!")
+        st.button("다시 시작하기", on_click=reset_game)
 
-label hangout_jisoo:
-    j "어디에 가고 싶어?"
-    
-    menu:
-        "공원에 가자.":
-            j "좋아! 공원에서 산책하자."
-            jump park_scene
+    elif st.session_state.step == 5:
+        st.write("공원이 정말 예쁘다!")
+        st.button("다시 시작하기", on_click=reset_game)
 
-        "쇼핑하러 가자.":
-            j "쇼핑도 좋지! 함께 가자."
-            jump shopping_scene
+    elif st.session_state.step == 6:
+        st.write("여기에서 정말 많은 것을 살 수 있어!")
+        st.button("다시 시작하기", on_click=reset_game)
 
-label cafe_scene:
-    scene bg cafe
-    e "커피가 정말 맛있다!"
-    return
+# 게임 상태를 초기화하는 함수
+def reset_game():
+    st.session_state.step = 0
 
-label movie_scene:
-    scene bg theater
-    e "이 영화 정말 재밌다!"
-    return
-
-label park_scene:
-    scene bg park
-    j "공원이 정말 예쁘다!"
-    return
-
-label shopping_scene:
-    scene bg shopping
-    j "여기에서 정말 많은 것을 살 수 있어!"
-    return
-
-
+if __name__ == "__main__":
+    main()
